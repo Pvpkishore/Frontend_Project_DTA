@@ -21,7 +21,7 @@
 <body>
     <!-- ==================================================================================== -->
     <!-- Header -->
-    <header class="header">
+    <header class="header" id="top">
         <div class="top">
             <div class="logo"><img src="HeaderSvgs/Logoname.png" alt="Entrée"></div>
             <div class="search">
@@ -35,8 +35,8 @@
             </div>
         </div>
         <nav class="nav">
-            <div class="links"><a href="#">CATEGORIES</a><a href="#">BRANDS</a><a href="#">MY LISTS</a><a href="#">MY ORDER HISTORY</a></div>
-            <a class="new-order" href="#">NEW ORDER</a>
+            <div class="links"><a href="#categories">CATEGORIES</a><a href="#brands">BRANDS</a><a href="#recommended">MY LISTS</a><a href="#account-activity">MY ORDER HISTORY</a></div>
+            <a class="new-order" href="#cart">NEW ORDER</a>
         </nav>
     </header>
 
@@ -53,7 +53,7 @@
                     <div class="carousel-message">
                         <h1>The steaks are high!</h1>
                         <p>Simply the best steak in town. Grab them at the best price now.</p>
-                        <a href="#">BUY NOW</a>
+                        <a href="#specials">BUY NOW</a>
                     </div>
                     <label class="carousel-arrow arrow-left" for="slide4" aria-label="Previous slide">&#10094;</label>
                     <label class="carousel-arrow arrow-right" for="slide2" aria-label="Next slide">&#10095;</label>
@@ -63,7 +63,7 @@
                     <div class="carousel-message">
                         <h1>Fresh grill deals!</h1>
                         <p>Simple prices, tasty cuts, and fast ordering for your kitchen.</p>
-                        <a href="#">BUY NOW</a>
+                        <a href="#specials">BUY NOW</a>
                     </div>
                     <label class="carousel-arrow arrow-left" for="slide1" aria-label="Previous slide">&#10094;</label>
                     <label class="carousel-arrow arrow-right" for="slide3" aria-label="Next slide">&#10095;</label>
@@ -73,7 +73,7 @@
                     <div class="carousel-message">
                         <h1>Big flavor, small effort.</h1>
                         <p>Choose your favorite cut and get it delivered at a great price.</p>
-                        <a href="#">BUY NOW</a>
+                        <a href="#specials">BUY NOW</a>
                     </div>
                     <label class="carousel-arrow arrow-left" for="slide2" aria-label="Previous slide">&#10094;</label>
                     <label class="carousel-arrow arrow-right" for="slide4" aria-label="Next slide">&#10095;</label>
@@ -83,7 +83,7 @@
                     <div class="carousel-message">
                         <h1>Weekend specials now on!</h1>
                         <p>Grab premium meat picks before the offer ends.</p>
-                        <a href="#">BUY NOW</a>
+                        <a href="#specials">BUY NOW</a>
                     </div>
                     <label class="carousel-arrow arrow-left" for="slide3" aria-label="Previous slide">&#10094;</label>
                     <label class="carousel-arrow arrow-right" for="slide1" aria-label="Next slide">&#10095;</label>
@@ -99,7 +99,7 @@
         </section>
         <!-- ================================================================================================================= -->
         <!-- Account activity -->
-        <section class="page-width account-activity">
+        <section class="page-width account-activity" id="account-activity">
             <h2>My Account Activity</h2>
 
             <div class="activity-box">
@@ -199,10 +199,10 @@
         </section>
 
         <!-- My Top Categories -->
-        <section class="catalog-section content-section">
+        <section class="catalog-section content-section" id="categories">
             <div class="top-categories">
                 <div class="heading">
-                    <h2>My Top Categories</h2><a href="#">EXPLORE ALL CATEGORIES <span>&#8250;</span></a>
+                    <h2>My Top Categories</h2><a href="#categories">EXPLORE ALL CATEGORIES <span>&#8250;</span></a>
                 </div>
                 <div class="categories">
                     <div class="card"><img src="images/fruits.png" alt="Fruits">
@@ -228,7 +228,7 @@
         </section>
 
         <!-- Recommended For You -->
-        <section class="catalog-section content-section">
+        <section class="catalog-section content-section" id="recommended">
             <div class="recommended">
                 <div class="top-bar">
                     <h2>Recommended For You</h2>
@@ -294,7 +294,7 @@
         </section>
 
         <!-- New Items in Stock -->
-        <section class="catalog-section content-section">
+        <section class="catalog-section content-section" id="new-items">
             <div class="new-items">
                 <div class="new-top-bar">
                     <h2>New Items In Stock</h2>
@@ -342,7 +342,7 @@
         </section>
 
         <!-- Buy Before They Go Off the Shelf -->
-        <section class="catalog-section content-section">
+        <section class="catalog-section content-section" id="specials">
             <div class="buy-section">
                 <div class="top-bar">
                     <h2>Buy Before They Go Off the Shelf</h2>
@@ -408,7 +408,7 @@
         </section>
 
         <!-- Shop Exclusive Brands -->
-        <section class="brand-section content-section">
+        <section class="brand-section content-section" id="brands">
             <div class="container">
                 <div class="section-header">
                     <h1>Shop Exclusive Brands</h1>
@@ -452,7 +452,7 @@
         </section>
 
         <!-- Cart -->
-        <section class="cart-container content-section">
+        <section class="cart-container content-section" id="cart">
             <div class="cart-header">
                 <h1>Cart #0098234567</h1>
                 <div class="header-icons"><button aria-label="Print">&#128424;</button><button
@@ -467,7 +467,7 @@
                 <div class="toolbar-left">
                     <div class="search-box"><input type="text"
                             placeholder="Search by Item Name, Item ID, or Brand"><span>&#128269;</span></div><a
-                        href="#">QUICK ADD ITEMS</a><a href="#">UPLOAD CSV</a>
+                        href="#frequently-bought">QUICK ADD ITEMS</a><a href="#cart">UPLOAD CSV</a>
                 </div>
                 <p class="item-count">3 Items</p>
             </div>
@@ -536,7 +536,7 @@
         </section>
 
         <!-- Exclusive and Frequently Bought Items -->
-        <section class="frequently-section content-section">
+        <section class="frequently-section content-section" id="frequently-bought">
             <div class="container">
                 <div class="section-header">
                     <h1>Exclusive and Frequently Bought Items</h1>

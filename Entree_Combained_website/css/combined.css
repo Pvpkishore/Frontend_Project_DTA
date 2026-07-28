@@ -10,6 +10,11 @@
 
 html {
   background: var(--page-base);
+  scroll-behavior: smooth;
+}
+
+[id] {
+  scroll-margin-top: 24px;
 }
 
 body {
