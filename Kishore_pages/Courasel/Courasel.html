@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Courasel.css">
+    <title>Carousel</title>
+</head>
+<body>
+    <div class="carousel">
+        <input type="radio" name="carousel" id="slide1" checked>
+        <input type="radio" name="carousel" id="slide2">
+        <input type="radio" name="carousel" id="slide3">
+        <input type="radio" name="carousel" id="slide4">
+
+        <div class="track">
+            <div class="slide slide1">
+                <div class="text-box">
+                    <h1>The steaks are high!</h1>
+                    <p>Simply the best steak in town. Grab them at the best price now.</p>
+                    <a class="button" href="#">BUY NOW</a>
+                </div>
+                <label class="arrow arrow-left" for="slide4">&#10094;</label>
+                <label class="arrow arrow-right" for="slide2">&#10095;</label>
+            </div>
+
+            <div class="slide slide2">
+                <div class="text-box">
+                    <h1>Fresh grill deals!</h1>
+                    <p>Simple prices, tasty cuts, and fast ordering for your kitchen.</p>
+                    <a class="button" href="#">BUY NOW</a>
+                </div>
+                <label class="arrow arrow-left" for="slide1">&#10094;</label>
+                <label class="arrow arrow-right" for="slide3">&#10095;</label>
+            </div>
+
+            <div class="slide slide3">
+                <div class="text-box">
+                    <h1>Big flavor, small effort.</h1>
+                    <p>Choose your favorite cut and get it delivered at a great price.</p>
+                    <a class="button" href="#">BUY NOW</a>
+                </div>
+                <label class="arrow arrow-left" for="slide2">&#10094;</label>
+                <label class="arrow arrow-right" for="slide4">&#10095;</label>
+            </div>
+
+            <div class="slide slide4">
+                <div class="text-box">
+                    <h1>Weekend specials now on!</h1>
+                    <p>Grab premium meat picks before the offer ends.</p>
+                    <a class="button" href="#">BUY NOW</a>
+                </div>
+                <label class="arrow arrow-left" for="slide3">&#10094;</label>
+                <label class="arrow arrow-right" for="slide1">&#10095;</label>
+            </div>
+        </div>
+
+        <div class="dots" aria-label="Slide indicators">
+            <label for="slide1" title="Slide 1"></label>
+            <label for="slide2" title="Slide 2"></label>
+            <label for="slide3" title="Slide 3"></label>
+            <label for="slide4" title="Slide 4"></label>
+        </div>
+    </div>
+</body>
+</html>

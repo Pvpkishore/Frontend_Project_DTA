@@ -1,0 +1,186 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 40px 20px;
+    background: #ffffff;
+    font-family: Arial, sans-serif;
+    color: #303542;
+}
+
+.account-activity {
+    max-width: 850px;
+    margin: auto;
+}
+
+.account-activity h2 {
+    margin: 0 0 20px;
+    font-size: 20px;
+    color: #253653;
+}
+
+.activity-box {
+    display: flex;
+    background: #eef0fa;
+    border-radius: 7px;
+    overflow: hidden;
+}
+
+.orders-area {
+    flex: 1;
+    padding: 16px 14px 18px;
+}
+
+.orders-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 14px;
+}
+
+.orders-title h3 {
+    margin: 0;
+    font-size: 15px;
+}
+
+.arrow-buttons button {
+    width: 22px;
+    height: 22px;
+    border: 0;
+    border-radius: 50%;
+    margin-left: 8px;
+    background: #c5c7ce;
+    color: white;
+    cursor: pointer;
+}
+
+.arrow-buttons button:last-child {
+    background: #2457ad;
+}
+
+.order-list {
+    display: flex;
+    gap: 12px;
+}
+
+.order-card {
+    flex: 1;
+    min-width: 0;
+    background: white;
+    border-radius: 6px;
+    padding: 13px 12px 10px;
+    font-size: 10px;
+}
+
+.order-card:hover {
+    box-shadow: 0 4px 12px rgba(13, 57, 217, 0.1);
+    transition: box-shadow 0.3s ease-in-out;
+       
+}
+
+.order-top {
+    display: flex;
+    justify-content: space-between;
+    gap: 8px;
+}
+
+.order-card strong {
+    color: #2053a8;
+    font-size: 11px;
+}
+
+.order-card p {
+    margin: 5px 0 0;
+    color: #747985;
+    font-size: 8px;
+    letter-spacing: 1px;
+}
+
+.price {
+    text-align: right;
+}
+
+.price strong {
+    color: #303542;
+    font-size: 10px;
+}
+
+.price p,
+.items {
+    text-transform: uppercase;
+}
+
+.items {
+    margin: 18px 0 9px !important;
+}
+
+.order-bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 7px;
+    padding-top: 9px;
+    border-top: 1px solid #e9e9e9;
+    font-size: 9px;
+    color: #5d6270;
+    white-space: nowrap;
+}
+
+.status {
+    padding: 4px 8px;
+    border-radius: 10px;
+    font-size: 7px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.processing { background: #f7dea0; color: #906d18; }
+.transit { background: #bde8e8; color: #277775; }
+.delivered { background: #b9ddf0; color: #22638d; }
+
+.balance-card {
+    width: 205px;
+    padding: 40px 25px;
+    background: #10285a;
+    color: white;
+}
+
+.balance-card h3 {
+    margin: 0;
+    font-size: 19px;
+}
+
+.balance-label {
+    margin: 5px 0 25px;
+    font-size: 8px;
+    letter-spacing: 2px;
+}
+
+.balance-details {
+    display: flex;
+    gap: 20px;
+}
+
+.balance-details div + div {
+    padding-left: 20px;
+    border-left: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+.balance-details strong,
+.balance-details span {
+    display: block;
+}
+
+.balance-details strong {
+    font-size: 13px;
+    font-weight: normal;
+}
+
+.balance-details span {
+    margin-top: 6px;
+    font-size: 7px;
+    letter-spacing: 1px;
+}
+

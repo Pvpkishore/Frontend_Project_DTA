@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Entrée | Food App</title>
+    <link rel="stylesheet" href="css/Top4pages.css">
+    <link rel="stylesheet" href="css/my-top-categories.css">
+    <link rel="stylesheet" href="css/new-items.css">
+    <link rel="stylesheet" href="css/buy-before.css">
+    <link rel="stylesheet" href="css/recomended-for-you.css">
+    <link rel="stylesheet" href="../Eshitha_Pages/scss/exclusive-brands.css">
+    <link rel="stylesheet" href="css/cart.css">
+    <link rel="stylesheet" href="css/frequently.css">
+    <link rel="stylesheet" href="css/combined.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+
+<body>
+    <!-- ==================================================================================== -->
+    <!-- Header -->
+    <header class="header">
+        <div class="top">
+            <div class="logo"><img src="HeaderSvgs/Logoname.png" alt="Entrée"></div>
+            <div class="search">
+                <div class="all"><span>All Items</span><img src="HeaderSvgs/dropdown-arrow-svgrepo-com.svg" alt="" aria-hidden="true"></div>
+                <input type="search" placeholder="What can we help you find?">
+                <button type="button" aria-label="Search"><img src="HeaderSvgs/search-finder-magnifying-glass-svgrepo-com.svg" alt="Search"></button>
+            </div>
+            <div class="right">
+                <span class="customer-name">Juanis Kitchen - 40164567</span>
+                <div class="icons"><img src="HeaderSvgs/notification-bell-svgrepo-com.svg" alt="Notifications"><img src="HeaderSvgs/profile-1335-svgrepo-com.svg" alt="Profile"><img src="HeaderSvgs/cart-svgrepo-com.svg" alt="Cart"></div>
+            </div>
+        </div>
+        <nav class="nav">
+            <div class="links"><a href="#">CATEGORIES</a><a href="#">BRANDS</a><a href="#">MY LISTS</a><a href="#">MY ORDER HISTORY</a></div>
+            <a class="new-order" href="#">NEW ORDER</a>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Promotional carousel -->
+        <section class="page-width carousel" aria-label="Promotions">
+            <input type="radio" name="carousel" id="slide1" checked aria-label="Show slide 1">
+            <input type="radio" name="carousel" id="slide2" aria-label="Show slide 2">
+            <input type="radio" name="carousel" id="slide3" aria-label="Show slide 3">
+            <input type="radio" name="carousel" id="slide4" aria-label="Show slide 4">
+
+            <div class="carousel-track">
+                <article class="carousel-slide slide1">
+                    <div class="carousel-message">
+                        <h1>The steaks are high!</h1>
+                        <p>Simply the best steak in town. Grab them at the best price now.</p>
+                        <a href="#">BUY NOW</a>
+                    </div>
+                    <label class="carousel-arrow arrow-left" for="slide4" aria-label="Previous slide">&#10094;</label>
+                    <label class="carousel-arrow arrow-right" for="slide2" aria-label="Next slide">&#10095;</label>
+                </article>
+
+                <article class="carousel-slide slide2">
+                    <div class="carousel-message">
+                        <h1>Fresh grill deals!</h1>
+                        <p>Simple prices, tasty cuts, and fast ordering for your kitchen.</p>
+                        <a href="#">BUY NOW</a>
+                    </div>
+                    <label class="carousel-arrow arrow-left" for="slide1" aria-label="Previous slide">&#10094;</label>
+                    <label class="carousel-arrow arrow-right" for="slide3" aria-label="Next slide">&#10095;</label>
+                </article>
+
+                <article class="carousel-slide slide3">
+                    <div class="carousel-message">
+                        <h1>Big flavor, small effort.</h1>
+                        <p>Choose your favorite cut and get it delivered at a great price.</p>
+                        <a href="#">BUY NOW</a>
+                    </div>
+                    <label class="carousel-arrow arrow-left" for="slide2" aria-label="Previous slide">&#10094;</label>
+                    <label class="carousel-arrow arrow-right" for="slide4" aria-label="Next slide">&#10095;</label>
+                </article>
+
+                <article class="carousel-slide slide4">
+                    <div class="carousel-message">
+                        <h1>Weekend specials now on!</h1>
+                        <p>Grab premium meat picks before the offer ends.</p>
+                        <a href="#">BUY NOW</a>
+                    </div>
+                    <label class="carousel-arrow arrow-left" for="slide3" aria-label="Previous slide">&#10094;</label>
+                    <label class="carousel-arrow arrow-right" for="slide1" aria-label="Next slide">&#10095;</label>
+                </article>
+            </div>
+
+            <div class="carousel-dots" aria-label="Slide indicators">
+                <label for="slide1" title="Show slide 1"></label>
+                <label for="slide2" title="Show slide 2"></label>
+                <label for="slide3" title="Show slide 3"></label>
+                <label for="slide4" title="Show slide 4"></label>
+            </div>
+        </section>
+        <!-- ================================================================================================================= -->
+        <!-- Account activity -->
+        <section class="page-width account-activity">
+            <h2>My Account Activity</h2>
+
+            <div class="activity-box">
+                <div class="orders-area">
+                    <div class="orders-title">
+                        <h3>Recent orders</h3>
+
+                        <div class="arrow-buttons">
+                            <button type="button" aria-label="Previous order">&#1390;</button>
+                            <button type="button" aria-label="Next order">&#1391;</button>
+                        </div>
+                    </div>
+
+                    <div class="order-list">
+                        <article class="order-card">
+                            <div class="order-top">
+                                <div>
+                                    <strong>Order ID: 1001</strong>
+                                    <p>24/07/2026 | 06:28 PM</p>
+                                </div>
+
+                                <div class="price">
+                                    <strong>$ 2500.00</strong>
+                                    <p>PENDING</p>
+                                </div>
+                            </div>
+
+                            <p class="items">253 ITEMS</p>
+
+                            <div class="order-bottom">
+                                <span class="status processing">Processing</span>
+                                <span>Delivery by 27/07/2026</span>
+                            </div>
+                        </article>
+
+                        <article class="order-card">
+                            <div class="order-top">
+                                <div>
+                                    <strong>Order ID: 1002</strong>
+                                    <p>16/05/2026 | 08:28 PM</p>
+                                </div>
+
+                                <div class="price">
+                                    <strong>$ 1225.00</strong>
+                                    <p>PENDING</p>
+                                </div>
+                            </div>
+
+                            <p class="items">80 ITEMS</p>
+
+                            <div class="order-bottom">
+                                <span class="status transit">In-transit</span>
+                                <span>Delivery by 25/05/2026</span>
+                            </div>
+                        </article>
+
+                        <article class="order-card">
+                            <div class="order-top">
+                                <div>
+                                    <strong>Order ID: 1003</strong>
+                                    <p>16/05/2026 | 08:28 PM</p>
+                                </div>
+
+                                <div class="price">
+                                    <strong>$ 1225.00</strong>
+                                    <p>PAID</p>
+                                </div>
+                            </div>
+
+                            <p class="items">180 ITEMS</p>
+
+                            <div class="order-bottom">
+                                <span class="status delivered">Delivered</span>
+                                <span>Delivered on 25/05/2026</span>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+
+                <aside class="balance-card">
+                    <h3>$100.00</h3>
+                    <p>ACCOUNT BALANCE</p>
+
+                    <div class="balance-info">
+                        <div>
+                            <strong>$0.00</strong>
+                            <span>AMOUNT DUE</span>
+                        </div>
+
+                        <div>
+                            <strong>COD</strong>
+                            <span>TERMS</span>
+                        </div>
+                    </div>
+                </aside>
+            </div>
+        </section>
+
+        <!-- My Top Categories -->
+        <section class="catalog-section content-section">
+            <div class="top-categories">
+                <div class="heading">
+                    <h2>My Top Categories</h2><a href="#">EXPLORE ALL CATEGORIES <span>&#8250;</span></a>
+                </div>
+                <div class="categories">
+                    <div class="card"><img src="images/fruits.png" alt="Fruits">
+                        <p>Fruits, Vegetables<br>&amp; Herbs</p>
+                    </div>
+                    <div class="card"><img src="images/meat.jfif" alt="Meat">
+                        <p>Meat, Poultry<br>&amp; Seafood</p>
+                    </div>
+                    <div class="card"><img src="images/dairy.jpg" alt="Dairy">
+                        <p>Dairy &amp; Eggs</p>
+                    </div>
+                    <div class="card"><img src="images/grocery.jpg" alt="Grocery">
+                        <p>Grocery</p>
+                    </div>
+                    <div class="card"><img src="images/desserts.jfif" alt="Desserts">
+                        <p>Desserts</p>
+                    </div>
+                    <div class="card"><img src="images/kitchen.jfif" alt="Kitchen essentials">
+                        <p>Kitchen<br>Essentials</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Recommended For You -->
+        <section class="catalog-section content-section">
+            <div class="recommended">
+                <div class="top-bar">
+                    <h2>Recommended For You</h2>
+                    <div class="slider-buttons"><button class="circle-btn" aria-label="Previous">&#8249;</button><button
+                            class="circle-btn active" aria-label="Next">&#8250;</button></div>
+                </div>
+                <div class="products">
+                    <article class="product-card">
+                        <div class="image-box"><span class="badge">BESTSELLER</span><img src="images/avacado.jfif"
+                                alt="Avocado Hass Green"></div>
+                        <div class="details">
+                            <p class="product-id">#1264815</p>
+                            <h3>Avocado Hass Green</h3>
+                            <p class="brand">PACKER</p>
+                            <div class="price-stock">
+                                <h4>$58.26</h4>
+                            </div>
+                            <div class="list-row"><span>+ ADD TO LIST</span><i class="fa-regular fa-heart"></i></div>
+                            <button>Add To Cart</button>
+                        </div>
+                    </article>
+                    <article class="product-card">
+                        <div class="image-box"><img src="images/cranberry.jfif" alt="Cranberry"></div>
+                        <div class="details">
+                            <p class="product-id">#2111451</p>
+                            <h3>Cranberry</h3>
+                            <p class="brand">4S FARMS</p>
+                            <div class="price-stock">
+                                <h4>$5.59 / LB</h4><span>24 items remaining</span>
+                            </div>
+                            <div class="list-row"><span>+ ADD TO LIST</span><i class="fa-regular fa-heart"></i></div>
+                            <button>Add To Cart</button>
+                        </div>
+                    </article>
+                    <article class="product-card">
+                        <div class="image-box"><img src="images/salmon.jfif" alt="Salmon fillet"></div>
+                        <div class="details">
+                            <p class="product-id">#1294456</p>
+                            <h3>Salmon Fillet Keta 4 Oz</h3>
+                            <p class="brand">OCEAN BAY SEAFOODS</p>
+                            <div class="price-stock">
+                                <h4>$79.42</h4>
+                            </div>
+                            <div class="list-row"><span>+ ADD TO LIST</span><i class="fa-regular fa-heart"></i></div>
+                            <button>Add To Cart</button>
+                        </div>
+                    </article>
+                    <article class="product-card">
+                        <div class="image-box"><img src="images/beef.jpg" alt="Beef tri tip"></div>
+                        <div class="details">
+                            <p class="product-id">#1264456</p>
+                            <h3>Beef Tri Tip</h3>
+                            <p class="brand">MEYER MEAT</p>
+                            <div class="price-stock">
+                                <h4>$11.32 / LB</h4>
+                            </div>
+                            <div class="list-row"><span>+ ADD TO LIST</span><i class="fa-regular fa-heart"></i></div>
+                            <button>Add To Cart</button>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- New Items in Stock -->
+        <section class="catalog-section content-section">
+            <div class="new-items">
+                <div class="new-top-bar">
+                    <h2>New Items In Stock</h2>
+                    <div class="slider-buttons"><button class="circle-btn" aria-label="Previous">&#8249;</button><button
+                            class="circle-btn active" aria-label="Next">&#8250;</button></div>
+                </div>
+                <div class="new-products">
+                    <article class="new-product-card new-featured-card">
+                        <div class="new-image-box"><span class="new-badge">FEATURED</span><img src="images/macaroni.jpg"
+                                alt="Macaroni and cheese"></div>
+                        <div class="new-details">
+                            <p class="new-product-id">#1204856</p>
+                            <h3>Macaroni and Cheese with Wholegrain</h3>
+                            <p class="new-brand">LAND O LAKES</p>
+                            <h4>$6.50 / LB</h4>
+                            <p class="new-description">An all-time classic, fully prepared and ready to serve.</p>
+                            <div class="new-list-row"><span>+ ADD TO LIST</span><i class="fa-regular fa-heart"></i>
+                            </div><button>Add To Cart</button>
+                        </div>
+                    </article>
+                    <article class="new-product-card">
+                        <div class="new-image-box"><img src="images/cheese.jfif" alt="Smoked Gouda cheese"></div>
+                        <div class="new-details">
+                            <p class="new-product-id">#1204857</p>
+                            <h3>Cheese Smoked Gouda</h3>
+                            <p class="new-brand">BRAZOS VALLEY CHEESE</p>
+                            <h4>$13.66 / LB</h4>
+                            <div class="new-list-row"><span>+ ADD TO LIST</span><i class="fa-regular fa-heart"></i>
+                            </div><button>Add To Cart</button>
+                        </div>
+                    </article>
+                    <article class="new-product-card">
+                        <div class="new-image-box"><img src="images/fig.jfif" alt="Fresh figs"></div>
+                        <div class="new-details">
+                            <p class="new-product-id">#1204858</p>
+                            <h3>Fig Fresh</h3>
+                            <p class="new-brand">PACKER</p>
+                            <h4>$98.49</h4>
+                            <div class="new-list-row"><span>+ ADD TO LIST</span><i class="fa-regular fa-heart"></i>
+                            </div><button>Add To Cart</button>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Buy Before They Go Off the Shelf -->
+        <section class="catalog-section content-section">
+            <div class="buy-section">
+                <div class="top-bar">
+                    <h2>Buy Before They Go Off the Shelf</h2>
+                    <div class="slider-buttons"><button class="circle-btn" aria-label="Previous">&#8249;</button><button
+                            class="circle-btn active" aria-label="Next">&#8250;</button></div>
+                </div>
+                <div class="products">
+                    <article class="product-card">
+                        <div class="image-box"><img src="images/greenapple.jpg" alt="Green apples"></div>
+                        <div class="details">
+                            <p class="product-id">#1233455</p>
+                            <h3>Green Apple</h3>
+                            <p class="brand">4S FARMS</p>
+                            <div class="price-stock">
+                                <h4>$6.50 / LB</h4><span>12 items remaining</span>
+                            </div>
+                            <div class="list-row"><span>+ ADD TO LIST</span><i class="fa-regular fa-heart"></i></div>
+                            <button>Add To Cart</button>
+                        </div>
+                    </article>
+                    <article class="product-card">
+                        <div class="image-box"><img src="images/brownie.jpg" alt="Chocolate brownie"></div>
+                        <div class="details">
+                            <p class="product-id">#1233456</p>
+                            <h3>Brownie Choc Chip</h3>
+                            <p class="brand">DAVID'S COOKIES</p>
+                            <div class="price-stock">
+                                <h4>$51.66</h4><span>20 items remaining</span>
+                            </div>
+                            <div class="list-row"><span>+ ADD TO LIST</span><i class="fa-regular fa-heart"></i></div>
+                            <button>Add To Cart</button>
+                        </div>
+                    </article>
+                    <article class="product-card">
+                        <div class="image-box"><img src="images/springroll.jpg" alt="Vegetable spring rolls"></div>
+                        <div class="details">
+                            <p class="product-id">#1204856</p>
+                            <h3>Spring Roll Vegetable</h3>
+                            <p class="brand">CUISINE INNOVATIONS</p>
+                            <div class="price-stock">
+                                <h4>$86.00</h4>
+                            </div>
+                            <div class="list-row"><span>+ ADD TO LIST</span><i class="fa-regular fa-heart"></i></div>
+                            <button>Add To Cart</button>
+                        </div>
+                    </article>
+                    <article class="product-card">
+                        <div class="image-box"><span class="badge">BESTSELLER</span><img src="images/coffee.jpg"
+                                alt="Liquid horchata coffee"></div>
+                        <div class="details">
+                            <p class="product-id">#1264854</p>
+                            <h3>Coffee Liquid Horchata</h3>
+                            <p class="brand">S &amp; D COFFEE</p>
+                            <div class="price-stock">
+                                <h4>$57.35</h4>
+                            </div>
+                            <div class="list-row"><span>+ ADD TO LIST</span><i class="fa-regular fa-heart"></i></div>
+                            <button>Add To Cart</button>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Shop Exclusive Brands -->
+        <section class="brand-section content-section">
+            <div class="container">
+                <div class="section-header">
+                    <h1>Shop Exclusive Brands</h1>
+                    <div class="slider-buttons"><button aria-label="Previous">&lt;</button><button
+                            aria-label="Next">&gt;</button></div>
+                </div>
+                <div class="brand-container">
+                    <article class="brand-card">
+                        <div class="brand-image"><img src="images1/Fresh salad bowl.jpg" alt="Fresh Harvest salad">
+                            <div class="brand-logo"><img src="images1/Fresh Harvest.jpg" alt="Fresh Harvest logo"></div>
+                        </div>
+                        <div class="brand-content">
+                            <h2>Fresh Harvest</h2>
+                            <p>Healthy salads and farm-fresh vegetables prepared with premium ingredients.</p><button
+                                class="shop-btn">SHOP BRAND</button>
+                        </div>
+                    </article>
+                    <article class="brand-card">
+                        <div class="brand-image"><img src="images1/Pizza or pasta.jpg" alt="BellaCibo pasta">
+                            <div class="brand-logo"><img src="images1/BellaCibo.png" alt="BellaCibo logo"></div>
+                        </div>
+                        <div class="brand-content">
+                            <h2>BellaCibo</h2>
+                            <p>Authentic Italian cuisine featuring handcrafted pasta and gourmet specialties.</p><button
+                                class="shop-btn">SHOP BRAND</button>
+                        </div>
+                    </article>
+                    <article class="brand-card">
+                        <div class="brand-image"><img src="images1/Oysters or salmon.webp" alt="Ocean's Catch seafood">
+                            <div class="brand-logo"><img src="images1/Ocean's Catch.webp" alt="Ocean's Catch logo">
+                            </div>
+                        </div>
+                        <div class="brand-content">
+                            <h2>Ocean's Catch</h2>
+                            <p>Fresh seafood selected daily to deliver exceptional taste and premium quality.</p><button
+                                class="shop-btn">SHOP BRAND</button>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Cart -->
+        <section class="cart-container content-section">
+            <div class="cart-header">
+                <h1>Cart #0098234567</h1>
+                <div class="header-icons"><button aria-label="Print">&#128424;</button><button
+                        aria-label="Share">&#8599;</button></div>
+            </div>
+            <div class="cart-info">
+                <div class="info-box cart-number"><label>Cart</label><input type="text" value="#0098234567"></div>
+                <div class="info-box"><label>PO Number</label><input type="text" value="0098234567"></div>
+                <div class="info-box"><label>Delivery Date</label><input type="date"></div>
+            </div>
+            <div class="cart-toolbar">
+                <div class="toolbar-left">
+                    <div class="search-box"><input type="text"
+                            placeholder="Search by Item Name, Item ID, or Brand"><span>&#128269;</span></div><a
+                        href="#">QUICK ADD ITEMS</a><a href="#">UPLOAD CSV</a>
+                </div>
+                <p class="item-count">3 Items</p>
+            </div>
+            <div class="cart-table-wrap">
+                <table class="cart-table">
+                    <thead>
+                        <tr>
+                            <th>Item</th>
+                            <th>Brand</th>
+                            <th>Pack Size</th>
+                            <th>Quantity</th>
+                            <th>Unit Price</th>
+                            <th>Total Value</th>
+                            <th>Delete</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <p class="item-id">#869402</p>
+                                <p class="item-name">Beef Tenderloin Prime</p>
+                            </td>
+                            <td>Winn Meat</td>
+                            <td>1/10 lbs</td>
+                            <td>
+<div class="qty-box"><button type="button" aria-label="Decrease quantity">−</button><input type="text" value="1" aria-label="Quantity"><button type="button" aria-label="Increase quantity">+</button>
+                                </div>
+                            </td>
+                            <td>$10.00</td>
+                            <td>$20.00</td>
+                            <td class="delete">&#128465;</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p class="item-id">#234323</p>
+                                <p class="item-name">Butter Stick Soy Free</p>
+                            </td>
+                            <td>Earth Balance</td>
+                            <td>1/10 lbs</td>
+                            <td>
+<div class="qty-box"><button type="button" aria-label="Decrease quantity">−</button><input type="text" value="1" aria-label="Quantity"><button type="button" aria-label="Increase quantity">+</button>
+                                </div>
+                            </td>
+                            <td>$10.00</td>
+                            <td>$20.00</td>
+                            <td class="delete">&#128465;</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p class="item-id">#4565451</p>
+                                <p class="item-name">Lemonade Frozen Condensed</p>
+                            </td>
+                            <td>Creative Bevblends</td>
+                            <td>9/64 oz</td>
+                            <td>
+<div class="qty-box"><button type="button" aria-label="Decrease quantity">−</button><input type="text" value="1" aria-label="Quantity"><button type="button" aria-label="Increase quantity">+</button>
+                                </div>
+                            </td>
+                            <td>$10.00</td>
+                            <td>$20.00</td>
+                            <td class="delete">&#128465;</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Exclusive and Frequently Bought Items -->
+        <section class="frequently-section content-section">
+            <div class="container">
+                <div class="section-header">
+                    <h1>Exclusive and Frequently Bought Items</h1>
+                </div>
+                <div class="product-container">
+                    <article class="product-card">
+                        <div class="card-image"><img src="images1/avocado.jpg" alt="Avocado"><span
+                                class="badge">BESTSELLER</span><span class="fav">♡</span></div>
+                        <div class="card-content">
+                            <p class="product-id">#1204856</p>
+                            <h3>Avocado Hass Green</h3>
+                            <p class="brand">PACKER</p>
+                            <h4>$58.26</h4>
+                <div class="quantity-box"><button type="button" aria-label="Decrease quantity">−</button><input type="text" value="0" aria-label="Quantity"><button type="button" aria-label="Increase quantity">+</button>
+                            </div>
+                            <p class="stock">In Stock: <strong>100</strong></p>
+                        </div>
+                    </article>
+                    <article class="product-card">
+                        <div class="card-image"><img src="images1/cranberry.jpg.webp" alt="Cranberry"><span
+                                class="badge">BESTSELLER</span><span class="fav">♡</span></div>
+                        <div class="card-content">
+                            <p class="product-id">#1204857</p>
+                            <h3>Cranberry Fresh</h3>
+                            <p class="brand">Nature Farm</p>
+                            <h4>$32.50</h4>
+                <div class="quantity-box"><button type="button" aria-label="Decrease quantity">−</button><input type="text" value="0" aria-label="Quantity"><button type="button" aria-label="Increase quantity">+</button>
+                            </div>
+                            <p class="stock">In Stock: <strong>85</strong></p>
+                        </div>
+                    </article>
+                    <article class="product-card">
+                        <div class="card-image"><img src="images1/beef.jpg" alt="Beef"><span
+                                class="badge">BESTSELLER</span><span class="fav">♡</span></div>
+                        <div class="card-content">
+                            <p class="product-id">#1204858</p>
+                            <h3>Beef Tri Tip</h3>
+                            <p class="brand">Premium Meat</p>
+                            <h4>$48.90</h4>
+                <div class="quantity-box"><button type="button" aria-label="Decrease quantity">−</button><input type="text" value="0" aria-label="Quantity"><button type="button" aria-label="Increase quantity">+</button>
+                            </div>
+                            <p class="stock">In Stock: <strong>50</strong></p>
+                        </div>
+                    </article>
+                    <article class="product-card">
+                        <div class="card-image"><img src="images1/salmon.jpg" alt="Salmon"><span
+                                class="badge">BESTSELLER</span><span class="fav">♡</span></div>
+                        <div class="card-content">
+                            <p class="product-id">#1204859</p>
+                            <h3>Salmon Fillet</h3>
+                            <p class="brand">Ocean Fresh</p>
+                            <h4>$65.75</h4>
+                <div class="quantity-box"><button type="button" aria-label="Decrease quantity">−</button><input type="text" value="0" aria-label="Quantity"><button type="button" aria-label="Increase quantity">+</button>
+                            </div>
+                            <p class="stock">In Stock: <strong>120</strong></p>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+    </main>
+    <!-- ======================================================================== -->
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="page-width footer-columns">
+            <div>
+                <h3>COMPANY</h3>
+                <a href="#">About Ben E. Keith</a>
+                <a href="#">Our Brands</a>
+                <a href="#">News Feed</a>
+                <a href="#">Eat Local Eat Often</a>
+            </div>
+
+            <div>
+                <h3>OUR SERVICES</h3>
+                <a href="#">MenuMax</a>
+                <a href="#">HOST Services</a>
+                <a href="#">Culinary Resource Team</a>
+                <a href="#">Newsletter</a>
+            </div>
+
+            <div>
+                <h3>CUSTOMER SUPPORT</h3>
+                <a href="#">Contact your Sales Rep</a>
+                <a href="#">Help Center</a>
+                <a href="#">Site Feedback</a>
+            </div>
+
+            <div>
+                <h3>POLICY &amp; TERMS</h3>
+                <a href="#">License Agreement</a>
+            </div>
+
+            <div>
+                <h3>FOLLOW US</h3>
+
+                <div class="social-icons">
+                    <img src="Footer_svgs/facebook.svg" alt="Facebook">
+                    <img src="Footer_svgs/youtube.svg" alt="YouTube">
+                    <img src="Footer_svgs/twitter.svg" alt="Twitter">
+                    <img src="Footer_svgs/insta.svg" alt="Instagram">
+                </div>
+            </div>
+
+            <div>
+                <h3>SIGN UP</h3>
+                <p>Receive exclusive email only promotions and offers</p>
+                <a class="subscribe" href="#">SUBSCRIBE</a>
+            </div>
+        </div>
+
+        <div class="page-width footer-bottom">
+            <img src="HeaderSvgs/Logoname.png" alt="Entrée">
+            <span>Copyright © 2026 Kishor. All Rights Reserved.</span>
+            <span class="language-selector"><img class="lanlogo" src="Footer_svgs/language_logo.svg" alt="">Select
+                Language ⌄</span>
+        </div>
+    </footer>
+</body>
+
+</html>

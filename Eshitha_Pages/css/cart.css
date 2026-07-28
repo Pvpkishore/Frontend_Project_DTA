@@ -1,0 +1,261 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+    background:#f5f5f5;
+}
+
+.cart-container{
+    width:90%;
+    margin:40px auto;
+    background:white;
+    padding:20px;
+    border-radius:10px;
+    box-shadow:0 0 10px rgba(0,0,0,0.2);
+}
+
+.cart-container h1{
+    color:black;
+    font-size:45px;
+    margin-bottom:30px;
+}
+
+.cart-info{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 30px;
+}
+
+.info-box{
+    display: flex;
+    flex-direction: column;
+}
+
+.info-box label{
+    font-size: 13px;
+    color: #666;
+    margin-bottom: 6px;
+    font-weight: 500;
+}
+
+.info-box input{
+    height: 40px;
+    border: 1px solid #dcdcdc;
+    border-radius: 20px;
+    padding: 0 15px;
+    font-size: 14px;
+    outline: none;
+}
+
+.cart-number input{
+    width: 260px;
+}
+
+.info-box:nth-child(2) input{
+    width: 180px;
+}
+
+.info-box:nth-child(3) input{
+    width: 170px;
+}
+
+.cart-header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+.cart-header h1{
+    font-size: 42px;
+    color: #222;
+}
+
+.header-icons{
+    display: flex;
+    gap: 15px;
+}
+
+.header-icons button{
+    border: none;
+    background: white;
+    font-size: 22px;
+    cursor: pointer;
+}
+
+.cart-toolbar{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    background: #eef2ff;
+    padding: 15px 20px;
+    margin-top: 20px;
+
+    border-radius: 10px 10px 0 0;
+}
+
+.search-box{
+    position: relative;
+}
+
+.search-box input{
+    width: 320px;
+    height: 40px;
+    padding: 0 40px 0 15px;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    outline: none;
+}
+
+.search-box span{
+    position: absolute;
+    right: 15px;
+    top: 0;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    line-height: 1;
+    pointer-events: none;
+}
+
+.cart-toolbar a{
+    text-decoration: none;
+    color: #2457d6;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.item-count{
+    font-weight: bold;
+    font-size: 15px;
+}
+
+.toolbar-left{
+    display:flex;
+    align-items:center;
+    gap:30px;
+}
+
+.toolbar-right{
+    display:flex;
+    align-items:center;
+}
+
+.item-count{
+    font-size: 15px;
+    font-weight: bold;
+    margin: 0;
+}
+
+.cart-table{
+    width:100%;
+    border-collapse:collapse;
+}
+
+.cart-table thead{
+    background:#d9dfea;
+}
+
+.cart-table th{
+    padding:15px;
+    text-align:left;
+    font-size:15px;
+}
+
+.cart-table td{
+    padding:18px 15px;
+    border-bottom:1px solid #e5e5e5;
+    font-size:14px;
+}
+
+.quantity{
+    display:flex;
+    align-items:center;
+    gap:10px;
+}
+
+.quantity button{
+
+    width:28px;
+    height:28px;
+
+    border:none;
+    border-radius:50%;
+
+    background:#2457d6;
+    color:white;
+
+    cursor:pointer;
+}
+
+.quantity span{
+    width:30px;
+    text-align:center;
+}
+
+.cart-table tbody tr:hover{
+    background:#f8f9ff;
+}
+.item-id{
+    color:#2457d6;
+    font-size:13px;
+    font-weight:bold;
+    margin-bottom:5px;
+}
+
+.item-name{
+    font-size:15px;
+    color:#333;
+}
+.qty-box{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:8px;
+}
+
+.qty-box button{
+
+    width:28px;
+    height:28px;
+
+    border:none;
+    border-radius:50%;
+
+    background:#2457d6;
+    color:white;
+
+    cursor:pointer;
+
+    font-size:16px;
+}
+
+.qty-box input{
+
+    width:45px;
+    height:28px;
+
+    text-align:center;
+
+    border:1px solid #ccc;
+    border-radius:20px;
+
+    outline:none;
+}
+.delete{
+    text-align:center;
+    cursor:pointer;
+    font-size:20px;
+}
+.cart-table tbody tr:hover{
+
+    background:#f5f8ff;
+
+    transition:.3s;
+}

@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart</title>
+    <link rel="stylesheet" href="./css/cart.css">
+
+</head>
+<body>
+    
+    <div class="cart-container">
+        
+        <div class="cart-header">
+            <h1>Cart #0098234567</h1>
+
+            <div class="header-icons">
+                <button>🖨️</button>
+                <button>↗</button>
+            </div>
+        </div>
+
+        <div class="cart-info">
+            <div class="info-box cart-number">
+                <label>Cart</label>
+                <input type="text" value="#0098234567">
+            </div>
+            
+            <div class="info-box">
+                <label>PO Number</label>
+                <input type="text" value="0098234567">
+            </div>
+
+            <div class="info-box">
+                <label>Delivery Date</label>
+                <input type="date">
+            </div>
+        </div>
+
+        <div class="cart-toolbar">
+
+            <div class="toolbar-left">
+
+                <div class="search-box">
+                    <input type="text" placeholder="Search by Item Name, Item ID, or Brand">
+                    <span>🔍</span>
+                </div>
+
+                <a href="#">QUICK ADD ITEMS</a>
+
+                <a href="#">UPLOAD CSV</a>
+
+            </div>
+
+            <div class="toolbar-right">
+
+                <p class="item-count">10 Items</p>
+
+            </div>
+
+        </div>
+
+        <table class="cart-table">
+            <thead>
+                <tr>
+                    <th>Item</th>
+                    <th>Brand</th>
+                    <th>Pack Size</th>
+                    <th>Quantity</th>
+                    <th>Unit Price</th>
+                    <th>Total Value</th>
+                    <th>Delete</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr>
+                    <td>
+                        <p class="item-id">#869402</p>
+                        <p class="item-name">Beef Tenderloin Prime</p>
+                    </td>
+                    <td>Winn Meat</td>
+                    <td>1/10 lbs</td>
+
+                    <td>
+                        <div class="qty-box">
+                            <button class="minus">−</button>
+                            <input type="text" value="1">
+                            <button class="plus">+</button>
+                        </div>
+                    </td>
+                    <td>$10.00</td>
+                    <td>$20.00</td>
+                    <td class="delete">🗑️</td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <p class="item-id">#234323</p>
+                        <p class="item-name">Butter Stick Soy Free</p>
+                    </td>
+                    <td>Earth Balance</td>
+                    <td>1/10 lbs</td>
+
+                    <td>
+                        <div class="qty-box">
+                            <button class="minus">−</button>
+                            <input type="text" value="1">
+                            <button class="plus">+</button>
+                        </div>
+                    </td>
+
+                    <td>$10.00</td>
+                    <td>$20.00</td>
+                    <td class="delete">🗑️</td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <p class="item-id">#4565451</p>
+                        <p class="item-name">Lemonade Frozen Condensed</p>
+                    </td>
+                    <td>Creative Bevblends</td>
+                    <td>9/64 oz</td>
+
+                    <td>
+                        <div class="qty-box">
+                            <button class="minus">−</button>
+                            <input type="text" value="1">
+                            <button class="plus">+</button>
+                        </div>
+                    </td>
+
+                    <td>$10.00</td>
+                    <td>$20.00</td>
+                    <td class="delete">🗑️</td>
+                </tr>
+            </tbody>
+        </table>      
+    </div>
+</body>
+</html>

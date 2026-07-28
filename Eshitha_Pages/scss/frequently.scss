@@ -1,0 +1,158 @@
+$primary-color: #2457d6;
+$background-color: #eef3f9;
+$card-color: #fff;
+$text-color: #222;
+$gray-color: #777;
+
+@mixin flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin button($bg) {
+    background: $bg;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+$border-radius:12px;
+$transition:.3s;
+$card-width:300px;
+
+$shadow:0 8px 20px rgba(0,0,0,.12);
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+    background:#f4f7fb;
+}
+
+.container{
+    width:90%;
+    margin:40px auto;
+}
+
+.container{
+    h1{
+        font-size:34px;
+        color:$text-color;
+        margin-bottom:10px;
+    }
+    .subtitle{
+        color:$gray-color;
+        margin-bottom:35px;
+    }
+}
+
+.product-container{
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:25px;
+}
+
+.card-image{
+    position: relative;
+    .badge{
+    position:absolute;
+    top:15px;
+    left:15px;
+    background:$primary-color;
+    color:white;
+    padding:8px 14px;
+    border-radius:20px;
+    font-size:13px;
+    font-weight:bold;
+    }
+    img{
+        width:100%;
+        height:220px;
+        object-fit:cover;
+    }
+    .fav{
+    transition:.3s;
+    &:hover{
+        background:$primary-color;
+        color:white;
+        transform:scale(1.15);
+    }
+    }
+}
+.product-card{
+    width: $card-width;
+    background: $card-color;
+    border-radius: $border-radius;
+    overflow: hidden;
+    box-shadow: $shadow;
+    transition: $transition;
+    &:hover{
+        transform: translateY(-12px);
+        box-shadow: 0 15px 30px rgba(0,0,0,.18);
+        img{
+            transform: scale(1.08);
+        }
+    }
+}
+.card-content{
+    padding:20px;
+    .product-id{
+        color:$primary-color;
+        font-weight:bold;
+        margin-bottom:10px;
+    }
+    h3{
+    font-size:22px;
+    line-height:1.3;
+    }
+    .brand{
+        color:$gray-color;
+        margin-bottom:15px;
+    }
+    h4{
+    font-size:28px;
+    color:$primary-color;
+    font-weight:bold;
+    }
+}
+.quantity-box{
+    display:flex;
+    justify-content:space-evenly;
+    align-items:center;
+    margin:20px 0;
+    button{
+        width:40px;
+        height:40px;
+        border-radius:50%;
+        @include button($primary-color);
+        font-size:20px;
+        transition:.3s;
+        &:hover{
+            background:#183ea5;
+        }
+    }
+    input{
+        width:60px;
+        height:38px;
+        text-align:center;
+        border:1px solid #ddd;
+        border-radius:20px;
+    }
+}
+.stock{
+    color:#2e7d32;
+    font-size:18px;
+    font-weight:bold;
+}
+.badge{
+    transition:.3s;
+    &:hover{
+        background:#183ea5;
+    }
+}

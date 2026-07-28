@@ -1,0 +1,210 @@
+/* Tablet */
+/* Mobile */
+/* Tablet */
+/* Mobile */
+/* Google Font */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap");
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins',sans-serif;
+}
+
+/* Body */
+body {
+  background: #ebcaca;
+  padding: 40px;
+}
+
+/* Section */
+.recommended {
+  width: 100%;
+  max-width: 1400px;
+  margin: auto;
+}
+
+/* Heading */
+.top-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.top-bar h2 {
+  color: black;
+  font-size: 40px;
+  font-weight: 600;
+}
+
+/* Arrow Buttons */
+.slider-buttons {
+  display: flex;
+  gap: 12px;
+}
+
+/* flex used  */
+.circle-btn {
+  width: 48px;
+  height: 48px;
+  border: none;
+  border-radius: 50%;
+  background: #fff;
+  color: #2f58d8;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: .3s;
+}
+
+.circle-btn.active {
+  background: #2f58d8;
+  color: #fff;
+}
+
+.circle-btn:hover {
+  transform: scale(1.08);
+}
+
+/* Product Grid - grid used */
+.products {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 25px;
+}
+
+/* Card */
+.product-card {
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: .3s;
+}
+
+.product-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+}
+
+/* Image */
+.image-box {
+  position: relative;
+  height: 240px;
+}
+
+.image-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Bestseller Badge */
+.badge {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  background: #fff;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+/* Details */
+.details {
+  padding: 18px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.product-id {
+  color: #777;
+  font-size: 14px;
+}
+
+.details h3 {
+  font-size: 22px;
+  margin-top: 10px;
+  min-height: 60px;
+}
+
+.brand {
+  color: #777;
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-top: 6px;
+}
+
+.details h4 {
+  font-size: 18px;
+  margin-top: 14px;
+}
+
+.stock {
+  color: #e53935;
+  font-size: 14px;
+  margin-top: 10px;
+}
+
+.invisible {
+  visibility: hidden;
+}
+
+/* Add To List */
+.list-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 18px 0;
+}
+
+.list-row span {
+  color: #2f58d8;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.list-row i {
+  color: #2f58d8;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+/* Button */
+.details button {
+  margin-top: auto;
+  width: 100%;
+  padding: 14px;
+  border: none;
+  border-radius: 30px;
+  background: #2f58d8;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: .3s;
+}
+
+.details button:hover {
+  background: #1f45c5;
+}
+
+/* Responsive */
+@media (max-width: 1200px) {
+  .products {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .products {
+    grid-template-columns: 1fr;
+  }
+}
