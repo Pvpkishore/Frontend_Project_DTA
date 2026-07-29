@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Entrée | Checkout</title>
+    <link rel="icon" type="image/png" href="HeaderSvgs/Logoname.png">
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            min-height: 100vh;
+            background: #f5f7fb;
+            color: #303542;
+            font-family: Arial, sans-serif;
+        }
+
+        .checkout-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 18px clamp(20px, 7vw, 88px);
+            background: #fff;
+            box-shadow: 0 2px 10px rgba(16, 41, 92, .08);
+        }
+
+        .checkout-header img {
+            width: 160px;
+            height: auto;
+        }
+
+        .back-link {
+            color: #10295c;
+            font-weight: 700;
+            text-decoration: none;
+        }
+
+        main {
+            width: min(960px, calc(100% - 40px));
+            margin: 48px auto;
+        }
+
+        h1 {
+            margin: 0 0 28px;
+            color: #10295c;
+            font-size: clamp(28px, 4vw, 40px);
+        }
+
+        .checkout-grid {
+            display: grid;
+            grid-template-columns: 1.3fr .7fr;
+            gap: 24px;
+        }
+
+        .panel {
+            padding: 28px;
+            border-radius: 14px;
+            background: #fff;
+            box-shadow: 0 4px 18px rgba(16, 41, 92, .08);
+        }
+
+        h2 {
+            margin: 0 0 18px;
+            color: #10295c;
+            font-size: 21px;
+        }
+
+        .delivery p {
+            margin: 7px 0;
+            line-height: 1.5;
+        }
+
+        .summary-row {
+            display: flex;
+            justify-content: space-between;
+            gap: 16px;
+            padding: 13px 0;
+            border-bottom: 1px solid #e2e6ef;
+        }
+
+        .summary-row.total {
+            border: 0;
+            padding-top: 20px;
+            color: #10295c;
+            font-size: 19px;
+            font-weight: 700;
+        }
+
+        .pay-button,
+        .payment-method {
+            width: 100%;
+            border: 0;
+            border-radius: 24px;
+            background: #10295c;
+            color: #fff;
+            font: inherit;
+            font-weight: 700;
+            cursor: pointer;
+        }
+
+        .pay-button {
+            margin-top: 24px;
+            padding: 15px;
+            letter-spacing: 1px;
+        }
+
+        .pay-button:hover,
+        .payment-method:hover {
+            background: #1d4b96;
+        }
+
+        dialog {
+            width: min(420px, calc(100% - 32px));
+            padding: 28px;
+            border: 0;
+            border-radius: 16px;
+            box-shadow: 0 16px 42px rgba(0, 0, 0, .25);
+        }
+
+        dialog::backdrop {
+            background: rgba(16, 41, 92, .45);
+        }
+
+        .dialog-heading {
+            margin: 0 0 18px;
+            color: #10295c;
+        }
+
+        .payment-method {
+            display: block;
+            margin: 12px 0;
+            padding: 14px;
+            text-align: left;
+        }
+
+        .close-dialog {
+            display: block;
+            margin: 18px auto 0;
+            border: 0;
+            background: transparent;
+            color: #59677f;
+            font: inherit;
+            cursor: pointer;
+        }
+
+        .success-dialog {
+            text-align: center;
+        }
+
+        .success-mark {
+            display: grid;
+            place-items: center;
+            width: 58px;
+            height: 58px;
+            margin: 0 auto 16px;
+            border-radius: 50%;
+            background: #e6f6ea;
+            color: #25843a;
+            font-size: 30px;
+            font-weight: 700;
+        }
+
+        .success-dialog p {
+            line-height: 1.5;
+        }
+
+        .success-dialog a {
+            display: inline-block;
+            margin-top: 12px;
+            padding: 12px 24px;
+            border-radius: 22px;
+            background: #10295c;
+            color: #fff;
+            font-weight: 700;
+            text-decoration: none;
+        }
+
+        @media (max-width: 700px) {
+            .checkout-grid {
+                grid-template-columns: 1fr;
+            }
+
+            main {
+                margin: 30px auto;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header class="checkout-header">
+        <img src="HeaderSvgs/Logoname.png" alt="Entrée">
+        <a class="back-link" href="Combinedpages.html#cart">← Back to Cart</a>
+    </header>
+    <main>
+        <h1>Checkout</h1>
+        <div class="checkout-grid">
+            <section class="panel delivery">
+                <h2>Delivery Details</h2>
+                <p><strong>Juanis Kitchen</strong></p>
+                <p>Delivery date will be confirmed after payment.</p>
+                <p>Review your cart before completing the order.</p>
+            </section>
+            <aside class="panel">
+                <h2>Order Summary</h2>
+                <div class="summary-row"><span>Items</span><strong id="summary-item-count">0 items</strong></div>
+                <div class="summary-row"><span>Delivery</span><strong>Included</strong></div>
+                <div class="summary-row total"><span>Total</span><span id="summary-total">$0.00</span></div>
+                <button class="pay-button" type="button">PAY NOW</button>
+            </aside>
+        </div>
+    </main>
+    <dialog id="payment-dialog" aria-labelledby="payment-dialog-title">
+        <h2 class="dialog-heading" id="payment-dialog-title">Choose a payment method</h2>
+        <button class="payment-method" type="button">Credit or Debit Card</button>
+        <button class="payment-method" type="button">UPI</button>
+        <button class="payment-method" type="button">Net Banking</button>
+        <button class="payment-method" type="button">Cash on Delivery</button>
+        <button class="close-dialog" type="button">Cancel</button>
+    </dialog>
+
+    <dialog id="success-dialog" class="success-dialog" aria-labelledby="success-dialog-title">
+        <div class="success-mark" aria-hidden="true">✓</div>
+        <h2 class="dialog-heading" id="success-dialog-title">Payment Successful</h2>
+        <p>Your order has been placed successfully. Thank you for shopping with Entrée.</p>
+        <a href="Combinedpages.html">Continue Shopping</a>
+    </dialog>
+    <script>
+        const savedCart = JSON.parse(sessionStorage.getItem('entreeCartSummary') || '{}');
+        const itemCount = Number(savedCart.itemCount) || 0;
+        const total = Number(savedCart.total) || 0;
+
+        document.querySelector('#summary-item-count').textContent = `${itemCount} ${itemCount === 1 ? 'item' : 'items'}`;
+        document.querySelector('#summary-total').textContent = `$${total.toFixed(2)}`;
+
+        const payButton = document.querySelector('.pay-button');
+        const paymentDialog = document.querySelector('#payment-dialog');
+        const successDialog = document.querySelector('#success-dialog');
+
+        payButton.addEventListener('click', () => paymentDialog.showModal());
+        paymentDialog.querySelector('.close-dialog').addEventListener('click', () => paymentDialog.close());
+        paymentDialog.querySelectorAll('.payment-method').forEach((method) => {
+            method.addEventListener('click', () => {
+                paymentDialog.close();
+                successDialog.showModal();
+            });
+        });
+    </script>
+</body>
+
+</html>

@@ -43,7 +43,7 @@
             </div>
             <div class="right">
                 <span class="customer-name">Juanis Kitchen - 40164567</span>
-                <div class="icons"><img src="HeaderSvgs/notification-bell-svgrepo-com.svg" alt="Notifications"><img src="HeaderSvgs/profile-1335-svgrepo-com.svg" alt="Profile"><a href="#cart" aria-label="View cart"><img src="HeaderSvgs/cart-svgrepo-com.svg" alt="Cart"></a></div>
+                <div class="icons"><img src="HeaderSvgs/notification-bell-svgrepo-com.svg" alt="Notifications"><a href="profile.html" aria-label="View profile"><img src="HeaderSvgs/profile-1335-svgrepo-com.svg" alt="Profile"></a><a class="cart-link" href="#cart" aria-label="View cart, 3 items"><img src="HeaderSvgs/cart-svgrepo-com.svg" alt="Cart"><span class="cart-badge" aria-hidden="true">3</span></a></div>
             </div>
         </div>
     </header>
@@ -53,6 +53,15 @@
     </nav>
 
     <main>
+        <section class="welcome-banner page-width" aria-label="Welcome">
+            <div>
+                <p class="welcome-kicker">YOUR KITCHEN, MADE EASIER</p>
+                <h1>Welcome back, Juanis Kitchen</h1>
+                <p>Stock up on your everyday essentials and discover fresh products picked for you.</p>
+                <a href="#recommended">EXPLORE PRODUCTS</a>
+            </div>
+            <div class="welcome-stat"><strong>Fast delivery</strong><span>Quality ingredients, right when you need them.</span></div>
+        </section>
         <!-- Promotional carousel -->
         <section class="page-width carousel" aria-label="Promotions">
             <input type="radio" name="carousel" id="slide1" checked aria-label="Show slide 1">
@@ -545,6 +554,9 @@
                     </tbody>
                 </table>
             </div>
+            <div class="checkout-action">
+                <a class="checkout-button" href="checkout.html">CHECK OUT</a>
+            </div>
         </section>
 
         <!-- Exclusive and Frequently Bought Items -->
@@ -690,6 +702,26 @@
         const itemCount = document.querySelector('.item-count');
         const cartSection = document.querySelector('#cart');
 
+        function getCartSummary() {
+            return [...cartTableBody.querySelectorAll('tr')].reduce((summary, row) => {
+                const quantity = Math.max(1, Number(row.querySelector('input[aria-label="Quantity"]')?.value) || 1);
+                const unitPrice = Number(row.cells[4].textContent.replace(/[^0-9.]/g, '')) || 0;
+                summary.itemCount += quantity;
+                summary.total += unitPrice * quantity;
+                return summary;
+            }, { itemCount: 0, total: 0 });
+        }
+
+        function saveCartForCheckout() {
+            sessionStorage.setItem('entreeCartSummary', JSON.stringify(getCartSummary()));
+        }
+
+        function updateRowTotal(row) {
+            const quantity = Math.max(1, Number(row.querySelector('input[aria-label="Quantity"]')?.value) || 1);
+            const unitPrice = Number(row.cells[4].textContent.replace(/[^0-9.]/g, '')) || 0;
+            row.cells[5].textContent = `$${(unitPrice * quantity).toFixed(2)}`;
+        }
+
         function updateItemCount() {
             itemCount.textContent = `${cartTableBody.querySelectorAll('tr').length} Items`;
         }
@@ -699,6 +731,7 @@
             if (deleteButton) {
                 deleteButton.closest('tr').remove();
                 updateItemCount();
+                saveCartForCheckout();
                 return;
             }
 
@@ -709,8 +742,8 @@
             const quantity = row.querySelector('input[aria-label="Quantity"]');
             const change = quantityButton.getAttribute('aria-label') === 'Increase quantity' ? 1 : -1;
             quantity.value = Math.max(1, Number(quantity.value || 1) + change);
-            const unitPrice = Number(row.cells[4].textContent.replace(/[^0-9.]/g, '')) || 0;
-            row.cells[5].textContent = `$${(unitPrice * Number(quantity.value)).toFixed(2)}`;
+            updateRowTotal(row);
+            saveCartForCheckout();
         });
 
         document.querySelectorAll('button').forEach((button) => {
@@ -744,12 +777,25 @@
                 }
 
                 updateItemCount();
+                saveCartForCheckout();
                 const originalText = button.textContent;
                 button.textContent = 'Added to Cart';
                 setTimeout(() => { button.textContent = originalText; }, 1200);
                 cartSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
             });
         });
+
+        cartTableBody.addEventListener('input', (event) => {
+            if (!event.target.matches('input[aria-label="Quantity"]')) return;
+            const row = event.target.closest('tr');
+            event.target.value = Math.max(1, Number(event.target.value) || 1);
+            updateRowTotal(row);
+            saveCartForCheckout();
+        });
+
+        document.querySelector('.checkout-button').addEventListener('click', saveCartForCheckout);
+        cartTableBody.querySelectorAll('tr').forEach(updateRowTotal);
+        saveCartForCheckout();
     </script>
 </body>
 
