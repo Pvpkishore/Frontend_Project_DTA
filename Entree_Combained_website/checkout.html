@@ -14,7 +14,7 @@
         body {
             margin: 0;
             min-height: 100vh;
-            background: #f5f7fb;
+            background: radial-gradient(circle at 85% 5%, #dce9ff 0, transparent 28%), #f5f7fb;
             color: #303542;
             font-family: Arial, sans-serif;
         }
@@ -24,8 +24,9 @@
             align-items: center;
             justify-content: space-between;
             padding: 18px clamp(20px, 7vw, 88px);
-            background: #fff;
-            box-shadow: 0 2px 10px rgba(16, 41, 92, .08);
+            background: rgba(255, 255, 255, .92);
+            border-bottom: 1px solid #e1e8f4;
+            box-shadow: 0 3px 18px rgba(16, 41, 92, .08);
         }
 
         .checkout-header img {
@@ -34,20 +35,26 @@
         }
 
         .back-link {
+            padding: 10px 16px;
+            border: 1px solid #d7e1f0;
+            border-radius: 22px;
             color: #10295c;
             font-weight: 700;
             text-decoration: none;
         }
 
+        .back-link:hover { background: #edf3fc; }
+
         main {
             width: min(960px, calc(100% - 40px));
-            margin: 48px auto;
+            margin: 54px auto;
         }
 
         h1 {
             margin: 0 0 28px;
             color: #10295c;
-            font-size: clamp(28px, 4vw, 40px);
+            font-size: clamp(30px, 4vw, 44px);
+            letter-spacing: -.8px;
         }
 
         .checkout-grid {
@@ -57,10 +64,11 @@
         }
 
         .panel {
-            padding: 28px;
-            border-radius: 14px;
-            background: #fff;
-            box-shadow: 0 4px 18px rgba(16, 41, 92, .08);
+            padding: 32px;
+            border: 1px solid rgba(219, 227, 239, .9);
+            border-radius: 20px;
+            background: rgba(255, 255, 255, .95);
+            box-shadow: 0 14px 34px rgba(16, 41, 92, .09);
         }
 
         h2 {
@@ -74,6 +82,22 @@
             line-height: 1.5;
         }
 
+        .delivery::before {
+            display: inline-grid;
+            place-items: center;
+            width: 42px;
+            height: 42px;
+            margin-bottom: 18px;
+            border-radius: 13px;
+            background: #e9f1ff;
+            color: #10295c;
+            content: '✓';
+            font-size: 22px;
+            font-weight: 700;
+        }
+
+        .order-summary { border-top: 4px solid #cda036; }
+
         .summary-row {
             display: flex;
             justify-content: space-between;
@@ -83,6 +107,7 @@
         }
 
         .summary-row.total {
+            margin-top: 8px;
             border: 0;
             padding-top: 20px;
             color: #10295c;
@@ -94,8 +119,8 @@
         .payment-method {
             width: 100%;
             border: 0;
-            border-radius: 24px;
-            background: #10295c;
+            border-radius: 28px;
+            background: linear-gradient(135deg, #10295c, #244f96);
             color: #fff;
             font: inherit;
             font-weight: 700;
@@ -104,20 +129,22 @@
 
         .pay-button {
             margin-top: 24px;
-            padding: 15px;
+            padding: 17px;
+            box-shadow: 0 9px 17px rgba(16, 41, 92, .2);
             letter-spacing: 1px;
         }
 
         .pay-button:hover,
         .payment-method:hover {
             background: #1d4b96;
+            transform: translateY(-2px);
         }
 
         dialog {
             width: min(420px, calc(100% - 32px));
             padding: 28px;
             border: 0;
-            border-radius: 16px;
+            border-radius: 20px;
             box-shadow: 0 16px 42px rgba(0, 0, 0, .25);
         }
 
@@ -179,6 +206,14 @@
             text-decoration: none;
         }
 
+        .secure-note {
+            display: block;
+            margin-top: 15px;
+            color: #66748b;
+            font-size: 12px;
+            text-align: center;
+        }
+
         @media (max-width: 700px) {
             .checkout-grid {
                 grid-template-columns: 1fr;
@@ -205,12 +240,13 @@
                 <p>Delivery date will be confirmed after payment.</p>
                 <p>Review your cart before completing the order.</p>
             </section>
-            <aside class="panel">
+            <aside class="panel order-summary">
                 <h2>Order Summary</h2>
                 <div class="summary-row"><span>Items</span><strong id="summary-item-count">0 items</strong></div>
                 <div class="summary-row"><span>Delivery</span><strong>Included</strong></div>
                 <div class="summary-row total"><span>Total</span><span id="summary-total">$0.00</span></div>
                 <button class="pay-button" type="button">PAY NOW</button>
+                <small class="secure-note">🔒 Your payment details are secure.</small>
             </aside>
         </div>
     </main>
