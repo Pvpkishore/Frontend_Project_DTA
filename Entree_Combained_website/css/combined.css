@@ -529,9 +529,18 @@ main::before {
 .header .search { display: flex; flex: 0 1 500px; align-items: center; width: 500px; height: 50px; overflow: hidden; border: 1px solid #d9deea; border-radius: 25px; background: #fff; }
 .header .search .all { display: flex; flex: 0 0 auto; align-items: center; min-height: 50px; padding: 0 12px 0 14px; margin: 0; border-right: 1px solid #d9deea; background: #f7f9fd; color: #303542; font-size: 14px; font-weight: 700; white-space: nowrap; }
 .header .search .all img { display: block; width: 10px; height: 10px; margin-left: 6px; }
+.header .search { overflow: visible; }
+.header .search .all { position: relative; padding: 0; }
+.header .search .all-toggle { display: flex; align-items: center; min-height: 50px; padding: 0 12px 0 14px; border: 0; background: transparent; color: inherit; font: inherit; cursor: pointer; }
+.header .search .all-items-menu { display: none; position: absolute; z-index: 10; top: calc(100% + 8px); left: 0; width: 250px; padding: 8px 0; border: 1px solid #d9deea; border-radius: 10px; background: #fff; box-shadow: 0 8px 20px rgba(16, 41, 92, 0.16); }
+.header .search .all.is-open .all-items-menu { display: block; }
+.header .search .all-items-menu a { display: block; padding: 10px 14px; color: #303542; font-size: 13px; font-weight: 600; text-decoration: none; }
+.header .search .all-items-menu a:hover, .header .search .all-items-menu a:focus { background: #eef3ff; color: #10295c; outline: none; }
 .header .search input { min-width: 0; flex: 1; height: auto; margin: 0; padding: 0 10px; border: 0; border-radius: 0; outline: 0; font-size: 14px; }
 .header .search button { display: flex; align-items: center; justify-content: center; width: auto; height: auto; margin: 0; padding: 0 14px; border: 0; border-radius: 0; background: transparent; }
 .header .search button img { display: block; width: 20px; height: 20px; }
+.header .search .all-toggle img { width: 10px; height: 10px; }
+.cart-table .delete { cursor: pointer; }
 .header .right { display: flex; flex: 0 0 auto; align-items: center; gap: 12px; color: #5a6782; font-size: 14px; white-space: nowrap; }
 .header .customer-name { font-style: italic; font-weight: 600; }
 .header .icons { display: flex; align-items: center; gap: 10px; }

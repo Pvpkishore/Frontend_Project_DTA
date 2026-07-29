@@ -27,18 +27,29 @@
         <div class="top">
             <div class="logo"><img src="HeaderSvgs/Logoname.png" alt="Entrée"></div>
             <div class="search">
-                <div class="all"><span>All Items</span><img src="HeaderSvgs/dropdown-arrow-svgrepo-com.svg" alt="" aria-hidden="true"></div>
+                <div class="all">
+                    <button class="all-toggle" type="button" aria-expanded="false" aria-controls="all-items-menu">All Items <img src="HeaderSvgs/dropdown-arrow-svgrepo-com.svg" alt="" aria-hidden="true"></button>
+                    <nav class="all-items-menu" id="all-items-menu" aria-label="Page sections">
+                        <a href="../combined_pages.html#account-activity">My Account Activity</a>
+                        <a href="../combined_pages.html#categories">My Top Categories</a>
+                        <a href="../combined_pages.html#recommended">Recommended For You</a>
+                        <a href="../combined_pages.html#new-items">New Items In Stock</a>
+                        <a href="../combined_pages.html#specials">Buy Before They Go Off the Shelf</a>
+                        <a href="../combined_pages.html#brands">Shop Exclusive Brands</a>
+                        <a href="../combined_pages.html#frequently-bought">Exclusive and Frequently Bought Items</a>
+                    </nav>
+                </div>
                 <input type="search" placeholder="What can we help you find?">
                 <button type="button" aria-label="Search"><img src="HeaderSvgs/search-finder-magnifying-glass-svgrepo-com.svg" alt="Search"></button>
             </div>
             <div class="right">
                 <span class="customer-name">Juanis Kitchen - 40164567</span>
-                <div class="icons"><img src="HeaderSvgs/notification-bell-svgrepo-com.svg" alt="Notifications"><img src="HeaderSvgs/profile-1335-svgrepo-com.svg" alt="Profile"><img src="HeaderSvgs/cart-svgrepo-com.svg" alt="Cart"></div>
+                <div class="icons"><img src="HeaderSvgs/notification-bell-svgrepo-com.svg" alt="Notifications"><img src="HeaderSvgs/profile-1335-svgrepo-com.svg" alt="Profile"><a href="../combined_pages.html#cart" aria-label="View cart"><img src="HeaderSvgs/cart-svgrepo-com.svg" alt="Cart"></a></div>
             </div>
         </div>
         <nav class="nav">
             <div class="links"><a href="../combined_pages.html#categories">CATEGORIES</a><a href="../combined_pages.html#brands">BRANDS</a><a href="../combined_pages.html#recommended">MY LISTS</a><a href="../combined_pages.html#account-activity">MY ORDER HISTORY</a></div>
-            <a class="new-order" href="../combined_pages.html#cart">NEW ORDER</a>
+            <a class="new-order" href="../combined_pages.html#recommended">NEW ORDER</a>
         </nav>
     </header>
 
@@ -207,22 +218,22 @@
                     <h2>My Top Categories</h2><a href="../combined_pages.html#categories">EXPLORE ALL CATEGORIES <span>&#8250;</span></a>
                 </div>
                 <div class="categories">
-                    <div class="card"><img src="images/fruits.png" alt="Fruits">
+                    <div class="card" id="category-fruits"><img src="images/fruits.png" alt="Fruits">
                         <p>Fruits, Vegetables<br>&amp; Herbs</p>
                     </div>
-                    <div class="card"><img src="images/meat.jfif" alt="Meat">
+                    <div class="card" id="category-meat"><img src="images/meat.jfif" alt="Meat">
                         <p>Meat, Poultry<br>&amp; Seafood</p>
                     </div>
-                    <div class="card"><img src="images/dairy.jpg" alt="Dairy">
+                    <div class="card" id="category-dairy"><img src="images/dairy.jpg" alt="Dairy">
                         <p>Dairy &amp; Eggs</p>
                     </div>
-                    <div class="card"><img src="images/grocery.jpg" alt="Grocery">
+                    <div class="card" id="category-grocery"><img src="images/grocery.jpg" alt="Grocery">
                         <p>Grocery</p>
                     </div>
-                    <div class="card"><img src="images/desserts.jfif" alt="Desserts">
+                    <div class="card" id="category-desserts"><img src="images/desserts.jfif" alt="Desserts">
                         <p>Desserts</p>
                     </div>
-                    <div class="card"><img src="images/kitchen.jfif" alt="Kitchen essentials">
+                    <div class="card" id="category-kitchen"><img src="images/kitchen.jfif" alt="Kitchen essentials">
                         <p>Kitchen<br>Essentials</p>
                     </div>
                 </div>
@@ -657,6 +668,90 @@
                 Language ⌄</span>
         </div>
     </footer>
+    <script>
+        document.querySelectorAll('.all').forEach((menu) => {
+            const toggle = menu.querySelector('.all-toggle');
+            toggle.addEventListener('click', () => {
+                const isOpen = menu.classList.toggle('is-open');
+                toggle.setAttribute('aria-expanded', isOpen);
+            });
+            menu.querySelectorAll('a').forEach((link) => link.addEventListener('click', () => {
+                menu.classList.remove('is-open');
+                toggle.setAttribute('aria-expanded', 'false');
+            }));
+            document.addEventListener('click', (event) => {
+                if (!menu.contains(event.target)) {
+                    menu.classList.remove('is-open');
+                    toggle.setAttribute('aria-expanded', 'false');
+                }
+            });
+        });
+
+        const cartTableBody = document.querySelector('.cart-table tbody');
+        const itemCount = document.querySelector('.item-count');
+        const cartSection = document.querySelector('#cart');
+
+        function updateItemCount() {
+            itemCount.textContent = `${cartTableBody.querySelectorAll('tr').length} Items`;
+        }
+
+        cartTableBody.addEventListener('click', (event) => {
+            const deleteButton = event.target.closest('.delete');
+            if (deleteButton) {
+                deleteButton.closest('tr').remove();
+                updateItemCount();
+                return;
+            }
+
+            const quantityButton = event.target.closest('button[aria-label="Increase quantity"], button[aria-label="Decrease quantity"]');
+            if (!quantityButton) return;
+
+            const row = quantityButton.closest('tr');
+            const quantity = row.querySelector('input[aria-label="Quantity"]');
+            const change = quantityButton.getAttribute('aria-label') === 'Increase quantity' ? 1 : -1;
+            quantity.value = Math.max(1, Number(quantity.value || 1) + change);
+            const unitPrice = Number(row.cells[4].textContent.replace(/[^0-9.]/g, '')) || 0;
+            row.cells[5].textContent = `$${(unitPrice * Number(quantity.value)).toFixed(2)}`;
+        });
+
+        document.querySelectorAll('button').forEach((button) => {
+            if (button.textContent.trim().toLowerCase() !== 'add to cart') return;
+
+            button.addEventListener('click', () => {
+                const product = button.closest('article');
+                const itemId = product.querySelector('.product-id, .new-product-id')?.textContent.trim() || 'New item';
+                const name = product.querySelector('h3')?.textContent.trim() || 'Item';
+                const brand = product.querySelector('.brand, .new-brand')?.textContent.trim() || '—';
+                const price = product.querySelector('h4')?.textContent.trim() || '$0.00';
+                const existingRow = [...cartTableBody.querySelectorAll('tr')].find((row) =>
+                    row.querySelector('.item-id')?.textContent.trim() === itemId
+                );
+
+                if (existingRow) {
+                    const quantity = existingRow.querySelector('input[aria-label="Quantity"]');
+                    quantity.value = Number(quantity.value || 0) + 1;
+                    const unitPrice = Number(existingRow.cells[4].textContent.replace(/[^0-9.]/g, '')) || 0;
+                    existingRow.cells[5].textContent = `$${(unitPrice * Number(quantity.value)).toFixed(2)}`;
+                } else {
+                    const priceValue = Number((price.match(/[\d.]+/) || ['0'])[0]);
+                    const row = document.createElement('tr');
+                    row.innerHTML = `<td><p class="item-id"></p><p class="item-name"></p></td><td></td><td>1 item</td><td><div class="qty-box"><button type="button" aria-label="Decrease quantity">−</button><input type="text" value="1" aria-label="Quantity"><button type="button" aria-label="Increase quantity">+</button></div></td><td></td><td></td><td class="delete">&#128465;</td>`;
+                    row.querySelector('.item-id').textContent = itemId;
+                    row.querySelector('.item-name').textContent = name;
+                    row.cells[1].textContent = brand;
+                    row.cells[4].textContent = price;
+                    row.cells[5].textContent = `$${priceValue.toFixed(2)}`;
+                    cartTableBody.appendChild(row);
+                }
+
+                updateItemCount();
+                const originalText = button.textContent;
+                button.textContent = 'Added to Cart';
+                setTimeout(() => { button.textContent = originalText; }, 1200);
+                cartSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            });
+        });
+    </script>
 </body>
 
 </html>
